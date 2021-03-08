@@ -11,11 +11,15 @@ const Landing = ({ isAuthenticated, loadUser }) => {
   if (isAuthenticated) {
     return <Redirect to='/adminDashboard' />
   }
+
+  const divStyle = {
+    'text-align': 'center'
+  }
   return (
-    <>
+    <div style={divStyle}>
       <h1>Welcome</h1>
       <Login />
-    </>
+    </div>
   )
 }
 const mapStateToProps = (state) => ({

@@ -7,18 +7,32 @@ const GetAllPages = ({ page: { pages }, getPages, deletePage }) => {
   useEffect(() => {
     getPages()
   }, [getPages])
-  return page === null ? (
+
+  const buttonStyle = {
+    padding: '15px',
+    width: '200px',
+    'word-break': 'break-all'
+  }
+  const crossStyle = {
+    padding: '15px'
+  }
+  return pages === null ? (
     <>Loading...</>
   ) : (
     <>
       <h3>Pages Available</h3>
       {pages.map((page) => (
         <div key={page._id}>
-          <strong>{page.pageName}</strong>
           <Link to={`/pages/${page.pageName}`}>
-            <button type='button'>View this page</button>
+            <button type='button' style={buttonStyle}>
+              Page for {page.pageName}
+            </button>
           </Link>
-          <button type='button' onClick={() => deletePage(page._id)}>
+          <button
+            type='button'
+            style={crossStyle}
+            onClick={() => deletePage(page._id)}
+          >
             X
           </button>
         </div>

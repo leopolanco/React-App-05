@@ -11,7 +11,12 @@ const Create = ({ addPage }) => {
   }
 
   const buttonStyle = {
-    width: '179px'
+    width: '60%',
+    padding:'20px'
+  }
+  const inputStyle= {
+    width: '58.5%',
+    padding:'10px'
   }
   return (
     <>
@@ -22,6 +27,7 @@ const Create = ({ addPage }) => {
             value={pageName}
             onChange={(e) => setPageName(e.target.value)}
             placeholder='Create page'
+            style={inputStyle}
           />
           <br />
           <button type='submit' style={buttonStyle}>
