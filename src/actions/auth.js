@@ -8,7 +8,7 @@ export const loadUser = () => async (dispatch) => {
     setAuthToken(localStorage.token)
   }
   try {
-    const res = await axios.get('http://192.168.1.11:5000/api/auth')
+    const res = await axios.get('https://rob-test-server.herokuapp.com/api/auth')
     dispatch({
       type: 'USER_LOADED',
       payload: res.data
@@ -31,7 +31,7 @@ export const adminLogin = (email, password) => async (dispatch) => {
   try {
     const res = await axios.post(
       // just making a call to auth endpoint for authorization
-      'http://192.168.1.11:5000/api/auth',
+      'https://rob-test-server.herokuapp.com/api/auth',
       body,
       config
     )

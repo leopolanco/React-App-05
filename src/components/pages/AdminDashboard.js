@@ -4,7 +4,7 @@ import GetAllPages from './GetAllPages'
 
 const AdminDashboard = () => {
   const dashboardStyle = {
-    'text-align': 'center'
+    textAlign: 'center'
   }
   return (
     <div style={dashboardStyle}>

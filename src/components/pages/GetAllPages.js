@@ -11,7 +11,7 @@ const GetAllPages = ({ page: { pages }, getPages, deletePage }) => {
   const buttonStyle = {
     padding: '15px',
     width: '200px',
-    'word-break': 'break-all'
+    wordBreak: 'break-all'
   }
   const crossStyle = {
     padding: '15px'

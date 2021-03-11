@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Check your stocks and how much value they've lost today or if you're lucky, how much value they've gained"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mr Carlos Test</title>
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.2.10/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.2.10/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.2.10/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <title>How much I've Lost Today?</title>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript man.</noscript>
-    <div id="root"></div>
+    <div id='root'></div>
+
   </body>
 </html>

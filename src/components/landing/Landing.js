@@ -7,18 +7,24 @@ import {loadUser} from '../../actions/auth'
 const Landing = ({ isAuthenticated, loadUser }) => {
   useEffect(() => {
     loadUser()
-  }, [])
+  }, [loadUser])
   if (isAuthenticated) {
     return <Redirect to='/adminDashboard' />
   }
 
   const divStyle = {
-    'text-align': 'center'
+    textAlign: 'center'
+  }
+  const subtitle = {
+    color:'gray',
+    margin:20
   }
   return (
     <div style={divStyle}>
       <h1>Welcome</h1>
       <Login />
+    <div style={subtitle}>If loading is slow, please wait for herokuapp to wake up</div>
+
     </div>
   )
 }

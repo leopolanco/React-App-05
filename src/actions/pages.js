@@ -3,10 +3,12 @@ import axios from 'axios'
 // get all pages
 export const getPages = () => async (dispatch) => {
   try {
-    const res = await axios.get('http://192.168.1.11:5000/api/pages')
+    const { data } = await axios.get(
+      'https://rob-test-server.herokuapp.com/api/pages'
+    )
     dispatch({
       type: 'GET_PAGES',
-      payload: res.data
+      payload: data
     })
   } catch (err) {
     console.error(err)
@@ -21,14 +23,14 @@ export const addPage = (pageName) => async (dispatch) => {
     }
   }
   try {
-    const res = await axios.post(
-      `http://192.168.1.11:5000/api/pages`,
+    const { data } = await axios.post(
+      `https://rob-test-server.herokuapp.com/api/pages`,
       pageName,
       config
     )
     dispatch({
       type: 'ADD_PAGES',
-      payload: res.data
+      payload: data
     })
     // Get all the pages after creating a new page
     dispatch(getPages())
@@ -39,10 +41,12 @@ export const addPage = (pageName) => async (dispatch) => {
 // get a page
 export const getPage = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`http://192.168.1.11:5000/api/pages/${id}`)
+    const { data } = await axios.get(
+      `https://rob-test-server.herokuapp.com/api/pages/${id}`
+    )
     dispatch({
       type: 'GET_PAGE',
-      payload: res.data
+      payload: data
     })
   } catch (err) {
     console.error(err)
@@ -52,7 +56,7 @@ export const getPage = (id) => async (dispatch) => {
 // delete a page
 export const deletePage = (id) => async (dispatch) => {
   try {
-    await axios.delete(`http://192.168.1.11:5000/api/pages/${id}`)
+    await axios.delete(`https://rob-test-server.herokuapp.com/api/pages/${id}`)
     dispatch({
       type: 'DELETE_PAGE',
       payload: id

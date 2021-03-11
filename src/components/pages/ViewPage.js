@@ -4,26 +4,35 @@ import { connect } from 'react-redux'
 import { getPage } from '../../actions/pages'
 
 const ViewPage = ({ match, getPage, page: { page } }) => {
+  let id = match.params.id
   useEffect(() => {
-    getPage(match.params.id)
-  }, [getPage])
+    getPage(id)
+  }, [getPage, id])
 
   const divStyle = {
-    'text-align': 'center'
+    textAlign: 'center'
   }
   return page === null ? (
+    <>Loading...</>
+  //Sometimes we navigate faster than the speed that the api return the pagename
+  //We'll use a loading text while we wait
+  ) : id !== page.pageName ? (
     <>Loading...</>
   ) : (
     <div style={divStyle}>
       <Link to='/adminDashboard'>Go to admin dashboard</Link>
-
       <div>This page is for: {page.pageName}</div>
-
-      {/* THIS IS FOR THE DEEP LINKING FIREBASE */}
-      <button type='button'>Share this page</button>
-
+      <br />
+      <button type='button'>
+        <a
+          href='https://robtest.page.link/nPwh'
+          target='_blank'
+          rel='noreferrer noopener'
+        >
+          Share this page
+        </a>
+      </button>
       <div>{page.shareLink}</div>
-      {/* THIS IS FOR THE DEEP LINKING FIREBASE */}
     </div>
   )
 }
