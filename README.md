@@ -19,4 +19,4 @@ Then you can share the link to that page.
 That link can be used to access that page in the mobile application.
 
 
-If the application is not installed the page to download it will be shown.
+If the application is not installed it will be shown a page in the web to download it.
